@@ -133,10 +133,10 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
                     }
                     resend.Emails.send(params)
                     
-                    # 保存新状态
-                    state_manager.save_current_state(current_state)
                 else:
                     print("状态未发生变化，跳过邮件通知")
+                # 保存新状态
+                    state_manager.save_current_state(current_state)
                 
                 break
 
@@ -170,7 +170,7 @@ if __name__ == "__main__":
 
     url = "https://ceac.state.gov/CEACStatTracker/Status.aspx"
     visa_type = "NIV"  # 这些可以保持硬编码，或者也设为环境变量
-    location = "BEJ"   # 这些可以保持硬编码，或者也设为环境变量
+    location = "GUZ"   # 这些可以保持硬编码，或者也设为环境变量
     max_retries = 3
 
     # 将读取到的值传递给函数

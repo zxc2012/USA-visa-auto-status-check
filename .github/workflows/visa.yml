@@ -3,7 +3,7 @@ name: Check US visa status
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 */2 * * *'
   push:
     branches:
       - main
