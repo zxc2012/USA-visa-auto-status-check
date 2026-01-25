@@ -132,11 +132,11 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
                         "html": f"签证状态: {status}<br>Case Created: {case_created}<br>Case Last Updated: {case_last_updated}<br>详细信息：{message}",
                     }
                     resend.Emails.send(params)
-                    
+                    # 保存新状态
+                    state_manager.save_current_state(current_state)
                 else:
                     print("状态未发生变化，跳过邮件通知")
-                # 保存新状态
-                state_manager.save_current_state(current_state)
+    
                 
                 break
 
@@ -175,3 +175,4 @@ if __name__ == "__main__":
 
     # 将读取到的值传递给函数
     get_visa_status(url, visa_type, location, case_number, passport_number, surname, resend_api_key, sender_address, recipient_email, max_retries)
+
