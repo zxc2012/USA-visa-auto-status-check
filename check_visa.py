@@ -136,7 +136,7 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
                 else:
                     print("状态未发生变化，跳过邮件通知")
                 # 保存新状态
-                    state_manager.save_current_state(current_state)
+                state_manager.save_current_state(current_state)
                 
                 break
 
