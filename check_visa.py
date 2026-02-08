@@ -179,11 +179,11 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
 
 if __name__ == "__main__":
     # 从环境变量读取敏感信息
-    case_number = 'AA00F417BZ'
-    passport_number = 'E91917530'
-    surname = 'YU'
-    resend_api_key = '123'
-    sender_address = '123'
+    case_number = os.environ.get("VISA_CASE_NUMBER")
+    passport_number = os.environ.get("PASSPORT_NUMBER")
+    surname = os.environ.get("SURNAME")
+    resend_api_key = os.environ.get("RESEND_API_KEY")
+    sender_address = os.environ.get("SENDER_ADDRESS")
     # 可选：从环境变量读取收件人邮箱
     recipient_email = os.environ.get("RECIPIENT_EMAIL") # 提供默认值
 
