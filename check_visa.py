@@ -35,8 +35,7 @@ class VisaStateManager:
             return True
             
         return (previous_state.get('status') != current_state.get('status') or
-                previous_state.get('case_last_updated') != current_state.get('case_last_updated') or
-                previous_state.get('message') != current_state.get('message'))
+                previous_state.get('case_last_updated') != current_state.get('case_last_updated'))
 
 # 设置控制台输出编码为 UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
