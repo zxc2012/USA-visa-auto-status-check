@@ -98,7 +98,7 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
                 "__VIEWSTATE": "8GJOG5GAuT1ex7KX3jakWssS08FPVm5hTO2feqUpJk8w5ukH4LG/o39O4OFGzy/f2XLN8uMeXUQBDwcO9rnn5hdlGUfb2IOmzeTofHrRNmB/hwsFyI4mEx0mf7YZo19g",
                 "__VIEWSTATEGENERATOR": "DBF1011F",
                 "__VIEWSTATEENCRYPTED": "",
-                "ctl00$ContentPlaceHolder1$Visa_Application_Type": "NIV",
+                "ctl00$ContentPlaceHolder1$Visa_Application_Type": visa_type,
                 "ctl00$ContentPlaceHolder1$Location_Dropdown": location,  # Use the correct value
                 "ctl00$ContentPlaceHolder1$Visa_Case_Number": case_number,
                 "ctl00$ContentPlaceHolder1$Captcha": captcha_text,
