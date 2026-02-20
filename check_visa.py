@@ -125,10 +125,10 @@ def get_visa_status(url, visa_type, location, case_number, passport_number, surn
 
             application_num_returned = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblCaseNo").string
             assert application_num_returned == case_number
-            status = status_tag.string
+            status = status_tag.get_text(strip=True)
             
-            case_created = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblSubmitDate").string
-            case_last_updated = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblStatusDate").string
+            case_created = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblSubmitDate").get_text(strip=True)
+            case_last_updated = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblStatusDate").get_text(strip=True)
 
             # 获取详细信息
             message = soup.find("span", id="ctl00_ContentPlaceHolder1_ucApplicationStatusView_lblMessage").string
